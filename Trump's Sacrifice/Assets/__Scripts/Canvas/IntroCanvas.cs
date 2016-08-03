@@ -16,7 +16,9 @@ public class IntroCanvas : MonoBehaviour {
 
     public void InitializeCanvas() {
         //configure buttons
-      
+        skipBut.onClick.RemoveAllListeners();
+        skipBut.onClick.AddListener(delegate { StartCoroutine(TransitionCanvas(0)); });
+        skipBut.onClick.AddListener(delegate { StartCoroutine(GameCanvas.S.TransitionCanvas(1)); });
     }
 
     public IEnumerator TransitionCanvas(int i) {

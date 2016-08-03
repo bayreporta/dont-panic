@@ -10,6 +10,10 @@ public class GameCanvas : MonoBehaviour {
     //CANVAS ITEMS______________________________________________
     public GameObject canvas;
     public CanvasGroup canvasGroup;
+    public Text score;
+    public Text completed;
+    public Button leftBut;
+    public Button rightBut;
 
     public void InitializeCanvas() {
         //configure buttons
