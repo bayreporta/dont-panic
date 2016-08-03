@@ -28,11 +28,11 @@ public class GameOverCanvas : MonoBehaviour {
                 break;
             case 1:
                 canvas.SetActive(true);
+                canvasGroup.interactable = true;
                 while (canvasGroup.alpha < 1) {
                     canvasGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
-                canvasGroup.interactable = true;
                 break;
         }
     }

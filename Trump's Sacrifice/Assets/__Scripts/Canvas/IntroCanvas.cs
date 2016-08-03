@@ -17,7 +17,7 @@ public class IntroCanvas : MonoBehaviour {
     public void InitializeCanvas() {
         //configure buttons
         skipBut.onClick.RemoveAllListeners();
-        skipBut.onClick.AddListener(delegate { StartCoroutine(TransitionCanvas(0)); });
+        skipBut.onClick.AddListener(delegate { StartCoroutine(this.TransitionCanvas(0)); });
         skipBut.onClick.AddListener(delegate { StartCoroutine(GameCanvas.S.TransitionCanvas(1)); });
     }
 
@@ -33,13 +33,16 @@ public class IntroCanvas : MonoBehaviour {
                 break;
             case 1:
                 canvas.SetActive(true);
+                canvasGroup.interactable = true;
                 while (canvasGroup.alpha < 1) {
                     canvasGroup.alpha += Time.deltaTime * 2;
                     yield return null;
-                }
-                canvasGroup.interactable = true;
+                }               
                 break;
         }
+
+        //turn off intro screen
+        OneRing.S.introScr.SetActive(false);
     }
 
 }

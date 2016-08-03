@@ -15,7 +15,7 @@ public class TitleCanvas : MonoBehaviour {
     public void InitializeCanvas() {
         //configure buttons
         playGame.onClick.RemoveAllListeners();
-        playGame.onClick.AddListener(delegate { StartCoroutine(TransitionCanvas(0)); });
+        playGame.onClick.AddListener(delegate { Debug.Log("hi"); StartCoroutine(this.TransitionCanvas(0)); });
         playGame.onClick.AddListener(delegate { StartCoroutine(IntroCanvas.S.TransitionCanvas(1)); });
     }
 
@@ -32,11 +32,11 @@ public class TitleCanvas : MonoBehaviour {
                 break;
             case 1:
                 canvas.SetActive(true);
+                canvasGroup.interactable = true;
                 while (canvasGroup.alpha < 1) {
                     canvasGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
-                canvasGroup.interactable = true;
                 break;
         }
 
