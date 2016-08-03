@@ -1,0 +1,103 @@
+{
+	"Data":
+	[
+    {
+        "id": 0,
+        "name": "Building an empire on the back of a father’s wealth",
+        "descript": "“The beauty of me is that I’m very rich.”",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 1,
+        "name": "Given a Purple Heart at a rally",
+        "descript": "“I always wanted to get a Purple Heart. This was much easier.”",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 2,
+        "name": "Stroking xenophobia for political gains",
+        "descript": "“I will build a great wall - and nobody builds better walls than me, believe me.”",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 3,
+        "name": "Creating a business with the end game of making money ",
+        "descript": "“I work very, very hard. I’ve created thousands and thousands of jobs. Tens of thousands of jobs.”",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 4,
+        "name": "Risking the racist vote by backing away from a full ban against Muslims by name",
+        "descript": "“We must suspend immigration from regions linked with terrorism until a proven vetting method is in place.”",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 5,
+        "name": "Seeking a deferment from the Vietnam War draft, five times",
+        "descript": "Bravely using privilege to escape a dreadful war that cost over 50,000 American lives, but hey, you helped build a Vietnam War Memorial in New York. ",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 7,
+        "name": "Throwing conservative values out the window to embrace a demagogue",
+        "descript": "GOP leadership embracing Trump as their flagbearer and choosing to clean up his messes rather than disavow him in name of winning the White House.",
+        "sacrifice": false,
+        "selfishness": true
+    },
+    {
+        "id": 8,
+        "name": "Saving a people from a burning building",
+        "descript": "Like Jared Marshallick, a 13-year-old Boy Scout who, with his father, saved a family from a burning building in Nanticoke, PA. ",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 9,
+        "name": "Awarded a Purple Heart through military service",
+        "descript": "You know, risking your life and limb for country and getting injured in process. About 2 million awarded.",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 10,
+        "name": "Leaving family behind to seek better opportunities",
+        "descript": "Leaving a familiar culture, saying goodbye to family and risking imprisonment to immigrate to the US in order to provide for loved ones back home.",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 11,
+        "name": "Working multiple jobs to make ends meet",
+        "descript": "The millions of Americans who work multiple part-time jobs, often at low wages, just to keep food on the table and a roof over their heads.",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 12,
+        "name": "Fleeing war-torn Syria for unfriendly lands",
+        "descript": "Close to 5 million Syrians have fled Syria and braved xenophobia, smugglers and an unforgiving Mediterranean Sea to escape the hellish civil war there.",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 13,
+        "name": "Protesting a Donald Trump rally",
+        "descript": "Dealing with slurs, sexual harassment,  pepper spray, and calls for violence against you, the protester, by The Donald himself.",
+        "sacrifice": true,
+        "selfishness": false
+    },
+    {
+        "id": 14,
+        "name": "Volunteering to serve in the Armed Forces",
+        "descript": "One of the 1.3 million Americans who voluntarily decided to risk their lives serving their country. ",
+        "sacrifice": true,
+        "selfishness": false
+    }
+]
+}
