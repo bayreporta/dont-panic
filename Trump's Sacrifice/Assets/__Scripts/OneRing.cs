@@ -30,6 +30,9 @@ public class OneRing : MonoBehaviour {
         GameCanvas.S.InitializeCanvas();
         GameOverCanvas.S.InitializeCanvas();
 
+        //controls
+        ParticleControl.S.InitializeParticleSystem();
+
         //turn off screens
         introScr.SetActive(false);
         gameScr.SetActive(false);
@@ -47,7 +50,7 @@ public class OneRing : MonoBehaviour {
         GameCanvas.S.UpdateDaysLeft(daysLeft);
 
         //Start game calculations
-        Invoke("StartGameDelay", 3f);
+        Invoke("StartGameDelay", 1f);
 
     }
 
