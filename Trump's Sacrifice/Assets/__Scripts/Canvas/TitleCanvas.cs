@@ -15,7 +15,7 @@ public class TitleCanvas : MonoBehaviour {
     public void InitializeCanvas() {
         //configure buttons
         playGame.onClick.RemoveAllListeners();
-        playGame.onClick.AddListener(delegate { Debug.Log("hi"); StartCoroutine(this.TransitionCanvas(0)); });
+        playGame.onClick.AddListener(delegate { StartCoroutine(this.TransitionCanvas(0)); });
         playGame.onClick.AddListener(delegate { StartCoroutine(IntroCanvas.S.TransitionCanvas(1)); });
     }
 
@@ -42,6 +42,7 @@ public class TitleCanvas : MonoBehaviour {
 
         //disable Title Screen
         OneRing.S.titleScr.SetActive(false);
+        OneRing.S.introScr.SetActive(true);
     }
 
 }

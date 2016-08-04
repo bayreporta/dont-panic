@@ -43,6 +43,8 @@ public class IntroCanvas : MonoBehaviour {
 
         //turn off intro screen
         OneRing.S.introScr.SetActive(false);
+        OneRing.S.gameScr.SetActive(true);
+        
     }
 
 }

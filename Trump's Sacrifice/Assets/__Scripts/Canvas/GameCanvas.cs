@@ -10,14 +10,24 @@ public class GameCanvas : MonoBehaviour {
     //CANVAS ITEMS______________________________________________
     public GameObject canvas;
     public CanvasGroup canvasGroup;
-    public Text score;
-    public Text completed;
-    public Button leftBut;
-    public Button rightBut;
+    public Text panic;
+    public Text daysLeft;
+    public Button panicBut;
+    public GameObject speechBubble;
+    public Text trumpism;
 
     public void InitializeCanvas() {
         //configure buttons
-       
+        panicBut.onClick.RemoveAllListeners();
+        panicBut.onClick.AddListener(delegate { GameControl.S.DontPanic(); });
+    }
+
+    public void UpdateDaysLeft(int day) {
+        daysLeft.text = day + " days left";
+    }
+
+    public void UpdatePanic(int p) {
+        panic.text = "Panic: " + p + "%";
     }
 
     public IEnumerator TransitionCanvas(int i) {
@@ -37,6 +47,9 @@ public class GameCanvas : MonoBehaviour {
                     canvasGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
+
+                //start the game
+                OneRing.S.StartGame();
                 break;
         }
     }
