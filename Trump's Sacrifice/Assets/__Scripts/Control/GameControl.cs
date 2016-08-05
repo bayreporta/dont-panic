@@ -5,9 +5,17 @@ public class GameControl : MonoBehaviour {
     public static GameControl S;
     void Awake() { S = this; }
 
-    //VARIABLES_____________________________
-    public bool trumpismActive = false;
+    //VARS_____________________________
+    public GameObject flag;
+    public bool activeGraphics = false;
 
+    //TRUMP_____________________________
+    public bool trumpismActive = false;
+    public GameObject mouthOpen;
+    public GameObject mouthClosed;
+    public ParticleSystem trumpFire;
+    public ParticleSystem trumpSmoke;
+    
     void Update() {
         if (OneRing.S.gameActive == true) {
             //watch for spacebar press
@@ -26,7 +34,23 @@ public class GameControl : MonoBehaviour {
         GameCanvas.S.UpdatePanic(OneRing.S.panic);
     }
 
-    public void LaunchTrumpism() {
+    public IEnumerator LaunchTrumpism() {
+        //toggle graphics
+        float timing = 0f;
+        if (!trumpFire.isPlaying) trumpFire.Play();
+        mouthClosed.SetActive(false);
+        mouthOpen.SetActive(true);
 
+        while (activeGraphics == true) {
+            //smoke
+            timing += 0.2f;
+            if (timing > 2.5f) if (!trumpSmoke.isPlaying) trumpSmoke.Play();
+            yield return new WaitForSeconds(0.2f);
+        }
+        //stops graphics
+        if (!trumpFire.isStopped) trumpFire.Stop();
+        if (!trumpSmoke.isStopped) trumpSmoke.Stop();
+        mouthClosed.SetActive(true);
+        mouthOpen.SetActive(false);
     }
 }

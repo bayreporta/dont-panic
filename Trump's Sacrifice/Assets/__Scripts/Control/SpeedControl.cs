@@ -27,6 +27,11 @@ public class SpeedControl : MonoBehaviour {
 
     public void RestoreOriginalPanicSpeed() {
         panicSpeed = 2f;
+        GameControl.S.activeGraphics = false;
+        Invoke("RestartTrumpisms", 3f);
+    }
+
+    public void RestartTrumpisms() {
         GameControl.S.trumpismActive = false;
     }
 
@@ -60,6 +65,10 @@ public class SpeedControl : MonoBehaviour {
 
                     //toggle trumpism
                     GameControl.S.trumpismActive = true;
+
+                    //launch trumpism
+                    GameControl.S.activeGraphics = true;
+                    StartCoroutine(GameControl.S.LaunchTrumpism());
 
                     //wait x seconds before resetting
                     Invoke("RestoreOriginalPanicSpeed", 5f);

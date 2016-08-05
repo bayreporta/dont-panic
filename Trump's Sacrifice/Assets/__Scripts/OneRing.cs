@@ -37,6 +37,11 @@ public class OneRing : MonoBehaviour {
         introScr.SetActive(false);
         gameScr.SetActive(false);
         gameOverScr.SetActive(false);
+
+        //graphics init
+        GameControl.S.mouthClosed.SetActive(true);
+        GameControl.S.mouthOpen.SetActive(false);
+
     }
 
     public void StartGame() {
