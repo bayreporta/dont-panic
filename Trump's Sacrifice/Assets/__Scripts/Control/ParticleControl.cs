@@ -9,6 +9,7 @@ public class ParticleControl : MonoBehaviour {
     //VARIABLES_______________________________________
     public List<ParticleSystem> stageOne;
     public List<ParticleSystem> stageTwo;
+    public List<ParticleSystem> stageThree;
 
     public void InitializeParticleSystem() {
       
@@ -16,12 +17,30 @@ public class ParticleControl : MonoBehaviour {
 
     public void ToggleParticleSystems(int panic) {
         if (panic >= 76) {
-            
+            //start stage 3
+            for (int i = 0; i < stageTwo.Count; i++) {
+                if (!stageThree[i].isPlaying) stageThree[i].Play();
+            }
+
+            //stop stage 2
+            for (int i = 0; i < stageTwo.Count; i++) {
+                if (!stageTwo[i].isPlaying) stageTwo[i].Play();
+            }
         }
         else if (panic >= 51 && panic <= 75) {
             //play stage 2
             for (int i = 0; i < stageTwo.Count; i++) {
                 if (!stageTwo[i].isPlaying) stageTwo[i].Play();
+            }
+
+            //stop stage 3
+            for (int i = 0; i < stageTwo.Count; i++) {
+                if (!stageThree[i].isStopped) stageThree[i].Stop();
+            }
+
+            //stop stage 1
+            for (int i = 0; i < stageOne.Count; i++) {
+                if (!stageOne[i].isStopped) stageOne[i].Stop();
             }
         }
         else if (panic >= 26 && panic <= 50) {
@@ -36,6 +55,7 @@ public class ParticleControl : MonoBehaviour {
             }
         }
         else if (panic <= 25) {
+            //stop stage 1
             for (int i = 0; i < stageOne.Count; i++) {
                 if (!stageOne[i].isStopped) stageOne[i].Stop();
             }

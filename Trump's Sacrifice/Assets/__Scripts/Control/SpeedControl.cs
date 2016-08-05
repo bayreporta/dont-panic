@@ -57,9 +57,9 @@ public class SpeedControl : MonoBehaviour {
                 if (rand <= .1f) {                   
 
                     //determine panic speed based on time left
-                    if (OneRing.S.daysLeft >= 76) { panicSpeed = .75f; }
-                    else if (OneRing.S.daysLeft >= 51 && OneRing.S.daysLeft <= 75) { panicSpeed = .5f; }
-                    else if (OneRing.S.daysLeft >= 26 && OneRing.S.daysLeft <= 50) { panicSpeed = .25f; }
+                    if (OneRing.S.daysLeft >= 76) { panicSpeed = .5f; }
+                    else if (OneRing.S.daysLeft >= 51 && OneRing.S.daysLeft <= 75) { panicSpeed = .3f; }
+                    else if (OneRing.S.daysLeft >= 26 && OneRing.S.daysLeft <= 50) { panicSpeed = .2f; }
                     else if (OneRing.S.daysLeft <= 25) { panicSpeed = .1f; }
                     Debug.Log("panicSpeed " + panicSpeed);
 
