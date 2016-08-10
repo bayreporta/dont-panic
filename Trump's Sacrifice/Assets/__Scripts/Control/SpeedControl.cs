@@ -26,7 +26,7 @@ public class SpeedControl : MonoBehaviour {
     }  
 
     public void RestoreOriginalPanicSpeed() {
-        panicSpeed = 2f;
+        panicSpeed = 1f;
         GameControl.S.activeGraphics = false;
         Invoke("RestartTrumpisms", 3f);
     }
@@ -61,7 +61,6 @@ public class SpeedControl : MonoBehaviour {
                     else if (OneRing.S.daysLeft >= 51 && OneRing.S.daysLeft <= 75) { panicSpeed = .3f; }
                     else if (OneRing.S.daysLeft >= 26 && OneRing.S.daysLeft <= 50) { panicSpeed = .2f; }
                     else if (OneRing.S.daysLeft <= 25) { panicSpeed = .1f; }
-                    Debug.Log("panicSpeed " + panicSpeed);
 
                     //toggle trumpism
                     GameControl.S.trumpismActive = true;

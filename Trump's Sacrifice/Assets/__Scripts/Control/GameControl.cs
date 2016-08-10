@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameControl : MonoBehaviour {
     public static GameControl S;
@@ -11,6 +12,7 @@ public class GameControl : MonoBehaviour {
 
     //TRUMP_____________________________
     public bool trumpismActive = false;
+	public List<string> usedTrumpisms;
     public GameObject mouthOpen;
     public GameObject mouthClosed;
     public ParticleSystem trumpFire;
@@ -34,10 +36,34 @@ public class GameControl : MonoBehaviour {
         GameCanvas.S.UpdatePanic(OneRing.S.panic);
     }
 
+	string WhichTrumpism(List<string> t){
+		bool winner = false;
+		string val = "";
+
+		//check to see if all trumpisms have been used and reset
+		if (t.Count == usedTrumpisms.Count) {
+			usedTrumpisms = new List<string> ();
+		}
+
+		//keep looping for a winner until you find one
+		while (winner == false) {
+			int rand = Random.Range (0, t.Count);
+			val = t [rand];
+
+			//check to see if trumpism has aready been used
+			if (usedTrumpisms.Contains (val)) {
+				continue;
+			} else {
+				usedTrumpisms.Add (val);
+				winner = true;
+			}
+		}
+		return val;
+	}	
+
     public IEnumerator LaunchTrumpism() {
         //trumpisms
-        int rand = Random.Range(0, DataDict.S.trumpisms.Count);
-        GameCanvas.S.trumpism.text = DataDict.S.trumpisms[rand];
+		GameCanvas.S.trumpism.text = WhichTrumpism(DataDict.S.trumpisms);
 
         //toggle graphics
         float timing = 0f;

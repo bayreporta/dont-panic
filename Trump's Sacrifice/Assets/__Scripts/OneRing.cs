@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class OneRing : MonoBehaviour {
     public static OneRing S;
@@ -50,11 +51,17 @@ public class OneRing : MonoBehaviour {
         GameCanvas.S.UpdatePanic(panic);
         GameCanvas.S.UpdateDaysLeft(daysLeft);
 
+		//init variables
+		GameControl.S.usedTrumpisms = new List<string>();
+
 		//graphics init
 		GameControl.S.mouthClosed.SetActive(true);
 		GameControl.S.mouthOpen.SetActive(false);
 		GameCanvas.S.warning.gameObject.SetActive (false);
 		GameCanvas.S.trumpism.text = "";
+
+		//reset particle systems
+		ParticleControl.S.ResetParticleSystems();
 
         //Start game calculations
         Invoke("StartGameDelay", 1f);

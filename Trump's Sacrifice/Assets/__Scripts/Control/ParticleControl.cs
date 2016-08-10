@@ -9,14 +9,48 @@ public class ParticleControl : MonoBehaviour {
     //VARIABLES_______________________________________
     public List<ParticleSystem> stageOne;
     public List<ParticleSystem> stageTwo;
-    public List<ParticleSystem> stageThree;
+	public List<ParticleSystem> stageThree;
+    public List<ParticleSystem> stageFour;
 
     public void InitializeParticleSystem() {
       
     }
 
+	public void ResetParticleSystems(){
+		//stop stage 1
+		for (int i = 0; i < stageOne.Count; i++) {
+			if (!stageOne[i].isStopped) stageOne[i].Stop();
+		}
+
+		//stop stage 2
+		for (int i = 0; i < stageTwo.Count; i++) {
+			if (!stageTwo[i].isPlaying) stageTwo[i].Play();
+		}
+
+		//stop stage 3
+		for (int i = 0; i < stageThree.Count; i++) {
+			if (!stageThree[i].isStopped) stageThree[i].Stop();
+		}
+
+		//stop stage 4
+		for (int i = 0; i < stageFour.Count; i++) {
+			if (!stageFour[i].isStopped) stageFour[i].Stop();
+		}
+	}
+
     public void ToggleParticleSystems(float panic) {
-        if (panic >= 75) {
+		if (panic == 100) {
+			//start stage 4
+			for (int i = 0; i < stageFour.Count; i++) {
+				if (!stageFour[i].isPlaying) stageFour[i].Play();
+			}
+
+			//stop stage 3
+			for (int i = 0; i < stageThree.Count; i++) {
+				if (!stageThree[i].isStopped) stageThree[i].Stop();
+			}
+		}
+		else if (panic >= 75 && panic < 100) {
             //start stage 3
             for (int i = 0; i < stageTwo.Count; i++) {
                 if (!stageThree[i].isPlaying) stageThree[i].Play();
@@ -34,7 +68,7 @@ public class ParticleControl : MonoBehaviour {
             }
 
             //stop stage 3
-            for (int i = 0; i < stageTwo.Count; i++) {
+            for (int i = 0; i < stageThree.Count; i++) {
                 if (!stageThree[i].isStopped) stageThree[i].Stop();
             }
 
