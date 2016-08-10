@@ -10,10 +10,14 @@ public class GameOverCanvas : MonoBehaviour {
     //CANVAS ITEMS______________________________________________
     public GameObject canvas;
     public CanvasGroup canvasGroup;
+	public Button button;
+	public Text endingText;
 
-    public void InitializeCanvas() {
-        //configure buttons
-        
+	public void InitializeCanvas() {
+		//configure buttons
+		button.onClick.RemoveAllListeners();
+		button.onClick.AddListener(delegate {OneRing.S.StartGame();});
+        	
     }
 
     public IEnumerator TransitionCanvas(int i) {

@@ -13,6 +13,7 @@ public class OneRing : MonoBehaviour {
     public bool gameActive = false;
     public int daysLeft;
     public float panic;
+	public int timesDontPanic;
 
 
     //SCREEN CONTROL_________________________________
@@ -46,6 +47,12 @@ public class OneRing : MonoBehaviour {
         gameActive = true;
         daysLeft = 100;
         panic = 0;
+		timesDontPanic = 0;
+
+		//init canvas
+		gameOverScr.SetActive(false);
+		GameOverCanvas.S.canvasGroup.alpha = 0;
+		GameOverCanvas.S.canvasGroup.interactable = false;
 
         //initialize game UI
         GameCanvas.S.UpdatePanic(panic);
@@ -74,8 +81,23 @@ public class OneRing : MonoBehaviour {
 
     }
 
-    public void GameOver() {
+	public void GameOver(int end) {
+		//bring in the canvas
+		gameOverScr.SetActive(true);
+		StartCoroutine(GameOverCanvas.S.TransitionCanvas(1));
 
+		//lets disable a few things
+		GameCanvas.S.warning.gameObject.SetActive (false);
+		GameCanvas.S.trumpism.text = "";
+
+		switch (end) {
+		case 0:
+			GameOverCanvas.S.endingText.text = "TRUMP DESTROYED AMERICA! SAD!";
+			break;
+		case 1:
+			GameOverCanvas.S.endingText.text = "";
+			break;
+		}
     }
 
 }

@@ -20,19 +20,31 @@ public class GameControl : MonoBehaviour {
     
     void Update() {
         if (OneRing.S.gameActive == true) {
-            //watch for spacebar press
-            if (Input.GetKeyDown("space")) {
-                DontPanic();
-            }
 
-            //particle system check
-            ParticleControl.S.ToggleParticleSystems(OneRing.S.panic);
+			//game over due to panic
+			if (OneRing.S.panic >= 100) {
+				OneRing.S.gameActive = false;
+				ParticleControl.S.ToggleParticleSystems (OneRing.S.panic);
+				OneRing.S.GameOver (0);
+			} else {
+				//watch for spacebar press
+				if (Input.GetKeyDown ("space")) {
+					DontPanic ();
+				}
+
+				//particle system check
+				ParticleControl.S.ToggleParticleSystems (OneRing.S.panic);
+			}
+
+            
         }
     }
 
     public void DontPanic() {
         //reduce panic
-        if (OneRing.S.panic != 0) OneRing.S.panic -= 0.5f;
+		OneRing.S.timesDontPanic += 1;
+		OneRing.S.panic = 90f;
+        //if (OneRing.S.panic != 0) OneRing.S.panic -= 0.5f;
         GameCanvas.S.UpdatePanic(OneRing.S.panic);
     }
 
