@@ -11,7 +11,7 @@ public class OneRing : MonoBehaviour {
     //GAME CONTROL_________________________________
     public bool gameActive = false;
     public int daysLeft;
-    public int panic;
+    public float panic;
 
 
     //SCREEN CONTROL_________________________________

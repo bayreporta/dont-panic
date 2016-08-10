@@ -27,8 +27,8 @@ public class GameCanvas : MonoBehaviour {
         daysLeft.text = day + " days left";
     }
 
-    public void UpdatePanic(int p) {
-        panic.text = "Panic: " + p + "%";
+    public void UpdatePanic(float p) {
+		panic.text = "Panic: " + Mathf.RoundToInt(p) + "%";
     }
 
     public IEnumerator TransitionCanvas(int i) {
