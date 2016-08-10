@@ -35,9 +35,13 @@ public class GameControl : MonoBehaviour {
     }
 
     public IEnumerator LaunchTrumpism() {
+        //trumpisms
+        int rand = Random.Range(0, DataDict.S.trumpisms.Count);
+        GameCanvas.S.trumpism.text = DataDict.S.trumpisms[rand];
+
         //toggle graphics
         float timing = 0f;
-        if (!trumpFire.isPlaying) trumpFire.Play();
+        if (!trumpFire.isPlaying) trumpFire.Play();        
         mouthClosed.SetActive(false);
         mouthOpen.SetActive(true);
 
@@ -52,5 +56,6 @@ public class GameControl : MonoBehaviour {
         if (!trumpSmoke.isStopped) trumpSmoke.Stop();
         mouthClosed.SetActive(true);
         mouthOpen.SetActive(false);
+        GameCanvas.S.trumpism.text = "";
     }
 }

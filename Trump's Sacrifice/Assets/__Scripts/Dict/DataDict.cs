@@ -19,6 +19,7 @@ public class DataDict : MonoBehaviour {
     //VARIABLES_____________________________________
     public Dictionary<int, DataDefinition> DEFS;
     public TextAsset dataJSON;
+    public List<string> trumpisms;
 
     public DataDefinition GetDefinition(int i) {
         if (DEFS.ContainsKey(i)) {
@@ -41,5 +42,32 @@ public class DataDict : MonoBehaviour {
             
             DEFS.Add(i, d);
         }
+
+        ConfigureTrumpisms();
+
     }
+
+    public void ConfigureTrumpisms() {
+        trumpisms = new List<string>();
+
+        //I know I know lazy
+        trumpisms.Add("THREATENS VIOLENCE AGAINST PROTESTERS");
+        trumpisms.Add("BAN MUSLIMS FROM ENTERING US");
+        trumpisms.Add("BUILD WALLS ALONG MEXICAN BORDER");
+        trumpisms.Add("ATTACK JUDGE OVER HIS RACE");
+        trumpisms.Add("WILLING TO DISHONOR NATO ALLIANCE");
+        trumpisms.Add("ASK PUTIN TO HACK FOR CLINTON EMAILS");
+        trumpisms.Add("DISHONOR FAMILIES OF VETERANS");
+        trumpisms.Add("ALTER LIBEL LAWS TO PROTECT SELF");
+        trumpisms.Add("RESTRICT PRESS ACCESS");
+        trumpisms.Add("PEDDLE CONSPIRACY THEORIES");
+        trumpisms.Add("STROKE BIGOTRY FOR VOTES");
+        trumpisms.Add("DEMEAN AND DEVALUE WOMEN");
+        trumpisms.Add("SECOND AMENDMENT RESPONSE TO CLINTON");
+        trumpisms.Add("CLAIM ELECTION IS RIGGED");
+        trumpisms.Add("WILFULLY LIE ABOUT EVERYTHING");
+        trumpisms.Add("USE ELECTION TO MARKET BRAND");
+    }
+
+
 }
