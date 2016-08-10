@@ -16,7 +16,22 @@ public class IntroControl : MonoBehaviour {
 				StartCoroutine (IntroCanvas.S.TransitionCanvas (1));
 				titleScr = false;
 				introScr = true;
+				StartCoroutine ("TrumpTalksTooMuch");
 			}
+		}
+
+	}
+
+	public IEnumerator TrumpTalksTooMuch(){
+		while (introScr == true) {
+			if (GameControl.S.mouthOpen.activeSelf) {
+				GameControl.S.mouthOpen.SetActive (false);
+				GameControl.S.mouthClosed.SetActive (true);
+			} else {
+				GameControl.S.mouthOpen.SetActive (true);
+				GameControl.S.mouthClosed.SetActive (false);
+			}
+			yield return new WaitForSeconds(0.2f);
 		}
 	}
 

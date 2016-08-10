@@ -11,7 +11,6 @@ public class IntroCanvas : MonoBehaviour {
     public GameObject canvas;
     public CanvasGroup canvasGroup;
     public Object image;
-    public Button nextBut;
     public Button skipBut;
 
     public void InitializeCanvas() {
@@ -23,17 +22,18 @@ public class IntroCanvas : MonoBehaviour {
 
     public IEnumerator TransitionCanvas(int i) {
         switch (i) {
-            case 0:
-                while (canvasGroup.alpha > 0) {
-                    canvasGroup.alpha -= Time.deltaTime * 2;
-                    yield return null;
-                }
-                canvas.SetActive(false);
-                canvasGroup.interactable = false;
+		case 0:
+			while (canvasGroup.alpha > 0) {
+				canvasGroup.alpha -= Time.deltaTime * 2;
+				yield return null;
+			}
+			canvas.SetActive (false);
+			canvasGroup.interactable = false;
 				
 				//turn off intro screen
-				OneRing.S.introScr.SetActive(false);
-				OneRing.S.gameScr.SetActive(true);
+			OneRing.S.introScr.SetActive (false);
+			OneRing.S.gameScr.SetActive (true);
+			OneRing.S.StartGame ();
                 break;
             case 1:
                 canvas.SetActive(true);

@@ -53,6 +53,10 @@ public class OneRing : MonoBehaviour {
         panic = 0;
 		timesDontPanic = 0;
 
+		//bye bye intro
+		Destroy(OneRing.S.introScr);
+		IntroControl.S.introScr = false;
+
 		//init canvas
 		gameOverScr.SetActive(false);
 		GameOverCanvas.S.canvasGroup.alpha = 0;
