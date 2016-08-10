@@ -37,6 +37,10 @@ public class OneRing : MonoBehaviour {
 		gameScr.SetActive(false);
 		gameOverScr.SetActive(false);
 
+		//init graphics
+		GameControl.S.mouthClosed.SetActive(true);
+		GameControl.S.mouthOpen.SetActive(false);
+
         //controls
         ParticleControl.S.InitializeParticleSystem();
 

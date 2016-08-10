@@ -10,15 +10,11 @@ public class TitleCanvas : MonoBehaviour {
     //CANVAS ITEMS______________________________________________
     public GameObject canvas;
     public CanvasGroup canvasGroup;
-    public Button playGame;
 
     public void InitializeCanvas() {
-        //configure buttons
-        playGame.onClick.RemoveAllListeners();
-        playGame.onClick.AddListener(delegate { StartCoroutine(this.TransitionCanvas(0)); });
-        playGame.onClick.AddListener(delegate { StartCoroutine(IntroCanvas.S.TransitionCanvas(1)); });
+       
+        
     }
-
 
     public IEnumerator TransitionCanvas(int i) {
         switch (i) {

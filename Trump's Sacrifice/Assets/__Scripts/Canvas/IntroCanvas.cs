@@ -30,6 +30,10 @@ public class IntroCanvas : MonoBehaviour {
                 }
                 canvas.SetActive(false);
                 canvasGroup.interactable = false;
+				
+				//turn off intro screen
+				OneRing.S.introScr.SetActive(false);
+				OneRing.S.gameScr.SetActive(true);
                 break;
             case 1:
                 canvas.SetActive(true);
@@ -41,9 +45,7 @@ public class IntroCanvas : MonoBehaviour {
                 break;
         }
 
-        //turn off intro screen
-        OneRing.S.introScr.SetActive(false);
-        OneRing.S.gameScr.SetActive(true);
+        
         
     }
 
