@@ -41,6 +41,7 @@ public class GameControl : MonoBehaviour {
 
         //toggle graphics
         float timing = 0f;
+		GameCanvas.S.warning.gameObject.SetActive (true);
         if (!trumpFire.isPlaying) trumpFire.Play();        
         mouthClosed.SetActive(false);
         mouthOpen.SetActive(true);
@@ -52,6 +53,7 @@ public class GameControl : MonoBehaviour {
             yield return new WaitForSeconds(0.2f);
         }
         //stops graphics
+		GameCanvas.S.warning.gameObject.SetActive (false);
         if (!trumpFire.isStopped) trumpFire.Stop();
         if (!trumpSmoke.isStopped) trumpSmoke.Stop();
         mouthClosed.SetActive(true);

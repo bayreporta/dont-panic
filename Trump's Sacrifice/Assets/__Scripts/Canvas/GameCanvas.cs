@@ -14,6 +14,7 @@ public class GameCanvas : MonoBehaviour {
     public Text daysLeft;
     public Button panicBut;
     public GameObject speechBubble;
+	public Text warning;
     public Text trumpism;
 
     public void InitializeCanvas() {
