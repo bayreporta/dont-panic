@@ -62,7 +62,7 @@ public class ParticleControl : MonoBehaviour {
 		}
 		else if (panic >= 75 && panic < 100) {
             //start stage 3
-            for (int i = 0; i < stageTwo.Count; i++) {
+            for (int i = 0; i < stageThree.Count; i++) {
                 if (!stageThree[i].isPlaying) stageThree[i].Play();
             }
 

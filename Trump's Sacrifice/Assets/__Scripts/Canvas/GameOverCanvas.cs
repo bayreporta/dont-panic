@@ -12,6 +12,7 @@ public class GameOverCanvas : MonoBehaviour {
     public CanvasGroup canvasGroup;
 	public Button button;
 	public Text endingText;
+	public Text panicText;
 
 	public void InitializeCanvas() {
 		//configure buttons

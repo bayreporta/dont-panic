@@ -95,9 +95,10 @@ public class OneRing : MonoBehaviour {
 			GameOverCanvas.S.endingText.text = "TRUMP DESTROYED AMERICA! SAD!";
 			break;
 		case 1:
-			GameOverCanvas.S.endingText.text = "";
+			GameOverCanvas.S.endingText.text = "YOU SAVED AMERICA FROM TRUMP! WINNING!";
 			break;
 		}
+		GameOverCanvas.S.panicText.text = "You didn't panic " + timesDontPanic + " times.";
     }
 
 }
