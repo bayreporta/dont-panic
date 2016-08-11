@@ -43,8 +43,7 @@ public class GameControl : MonoBehaviour {
     public void DontPanic() {
         //reduce panic
 		OneRing.S.timesDontPanic += 1;
-		OneRing.S.panic = 90f;
-        //if (OneRing.S.panic != 0) OneRing.S.panic -= 0.5f;
+        if (OneRing.S.panic != 0) OneRing.S.panic -= 0.5f;
         GameCanvas.S.UpdatePanic(OneRing.S.panic);
     }
 
