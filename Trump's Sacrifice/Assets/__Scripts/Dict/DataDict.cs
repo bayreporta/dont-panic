@@ -51,22 +51,20 @@ public class DataDict : MonoBehaviour {
         trumpisms = new List<string>();
 
         //I know I know lazy
-        trumpisms.Add("THREATENS VIOLENCE AGAINST PROTESTERS");
+        trumpisms.Add("THREATEN VIOLENCE AGAINST PROTESTERS");
         trumpisms.Add("BAN MUSLIMS FROM ENTERING US");
-        trumpisms.Add("BUILD WALLS ALONG MEXICAN BORDER");
+        trumpisms.Add("CALL MEXICAN IMMIGRANTS RAPISTS");
         trumpisms.Add("ATTACK JUDGE OVER HIS RACE");
-        trumpisms.Add("WILLING TO DISHONOR NATO ALLIANCE");
-        trumpisms.Add("ASK PUTIN TO HACK FOR CLINTON EMAILS");
-        trumpisms.Add("DISHONOR FAMILIES OF VETERANS");
+        trumpisms.Add("ASK RUSSIA TO HACK USA");
+        trumpisms.Add("ATTACK FAMILIES OF VETERANS");
         trumpisms.Add("ALTER LIBEL LAWS TO PROTECT SELF");
-        trumpisms.Add("RESTRICT PRESS ACCESS");
+        trumpisms.Add("RESTRICT PRESS ACCESS TO EVENTS");
         trumpisms.Add("PEDDLE CONSPIRACY THEORIES");
         trumpisms.Add("STROKE BIGOTRY FOR VOTES");
         trumpisms.Add("DEMEAN AND DEVALUE WOMEN");
-        trumpisms.Add("SECOND AMENDMENT RESPONSE TO CLINTON");
+        trumpisms.Add("ELUDE TO SECOND AMENDMENT SOLUTIONS");
         trumpisms.Add("CLAIM ELECTION IS RIGGED");
-        trumpisms.Add("WILFULLY LIE ABOUT EVERYTHING");
-        trumpisms.Add("USE ELECTION TO MARKET BRAND");
+		trumpisms.Add("USE ELECTION TO MARKET OWN BRAND");
     }
 
 

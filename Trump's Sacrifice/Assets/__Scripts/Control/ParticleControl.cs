@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,7 +18,6 @@ public class ParticleControl : MonoBehaviour {
     }
 
 	public void ResetParticleSystems(){
-		Debug.Log ("here");
 		//stop stage 4
 		for (int i = 0; i < stageFour.Count; i++) {
 			if (!stageFour[i].isStopped) stageFour[i].Stop();
@@ -50,6 +50,7 @@ public class ParticleControl : MonoBehaviour {
 
     public void ToggleParticleSystems(float panic) {
 		if (panic >= 100) {
+
 			//start stage 4
 			for (int i = 0; i < stageFour.Count; i++) {
 				if (!stageFour[i].isPlaying) stageFour[i].Play();

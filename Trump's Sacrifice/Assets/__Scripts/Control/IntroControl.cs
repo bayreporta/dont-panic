@@ -16,6 +16,10 @@ public class IntroControl : MonoBehaviour {
 				StartCoroutine (IntroCanvas.S.TransitionCanvas (1));
 				titleScr = false;
 				introScr = true;
+
+				//weird audio
+				AudioControl.S.PlayWeird();
+
 				StartCoroutine ("TrumpTalksTooMuch");
 			}
 		}
@@ -23,6 +27,7 @@ public class IntroControl : MonoBehaviour {
 	}
 
 	public IEnumerator TrumpTalksTooMuch(){
+
 		while (introScr == true) {
 			if (GameControl.S.mouthOpen.activeSelf) {
 				GameControl.S.mouthOpen.SetActive (false);

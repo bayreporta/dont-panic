@@ -43,6 +43,7 @@ public class OneRing : MonoBehaviour {
 
         //controls
         ParticleControl.S.InitializeParticleSystem();
+		AudioControl.S.InitializeAudio ();
 
     }
 
@@ -100,6 +101,7 @@ public class OneRing : MonoBehaviour {
 
 		switch (end) {
 		case 0:
+			AudioControl.S.PlayExplosion ();
 			GameOverCanvas.S.endingText.text = "TRUMP DESTROYED AMERICA! SAD!";
 			break;
 		case 1:
